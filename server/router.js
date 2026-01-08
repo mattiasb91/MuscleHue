@@ -1,6 +1,8 @@
 express = require('express');
+
 const router = express.Router();
-const {getAllMuscles, getAllWorkouts, logWorkout} = require ('./controllers/muscleController');
+const getAllMuscles = require ('./controllers/muscleController');
+const {getAllWorkouts, logWorkout} = require ('./controllers/workoutController');
 
 
 // show all muscles
