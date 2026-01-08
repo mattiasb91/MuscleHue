@@ -1,0 +1,8 @@
+const mongoose = require('mongoose');
+
+const muscleSchema = new mongoose.Schema({
+  name: {type: String, required: true, unique: true,},
+  workoutDate: { Date, default: null,}
+});
+
+module.exports = mongoose.model('Muscle', muscleSchema);
