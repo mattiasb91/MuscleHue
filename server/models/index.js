@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-require('./muscleModel');
-require('./workoutModel');
-require('./logWorkoutModel')
+const Muscle = require('./muscleModel');
+const Workout = require('./workoutModel');
+const LoggedWorkout = require('./logWorkoutModel')
 
 
 async function connectDB() {
@@ -12,7 +12,13 @@ async function connectDB() {
 
   } catch(err) {
     console.error('MongoDB connection error ', err);
+    process.exit(1); //this means: the app failed to start, shut it down. stop the broken server
   }
 }
 
-module.exports = connectDB;
+module.exports = {
+  connectDB,
+  Muscle,
+  Workout,
+  LoggedWorkout
+};

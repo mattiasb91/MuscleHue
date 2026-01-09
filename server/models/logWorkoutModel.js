@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
+const ObjectId = mongoose.Schema.Types.ObjectId;  // put this variable here to make the schema itself easier to read
+
 const loggedWorkoutSchema = new mongoose.Schema({
   workout: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref: 'Workout',
+    type:ObjectId, // type is object IDs. Each item in this array is an ObjectId pointing to another document.
+    ref: 'Workout', // This objectid refers to a document in the Workout collection
     required: true,
   },
   performedAt: {
