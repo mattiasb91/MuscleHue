@@ -15,9 +15,11 @@ async function getAllWorkouts(req, res) {
   }
 };
 
+// this is the most complicated controller. it should both ad a loggedworkout to the logworkout collection,
+// and update affected muscles  workoutDate:
 
 async function logWorkout(req, res) {
-
+// TODO
 };
 
 module.exports = { getAllWorkouts, logWorkout };
