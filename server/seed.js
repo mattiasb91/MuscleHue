@@ -8,19 +8,26 @@ async function seedDataBase() {
   console.log("seedin' database.....");
 
   const muscles = await Muscle.insertMany([
-    { name: 'Deltoid' },
+    { name: 'Deltoid_L' },
+    { name: 'Deltoid_R' },
     { name: 'Chest' },
-    { name: 'Biceps' },
-    { name: 'Side abs' },
+    { name: 'Biceps_R' },
+    { name: 'Biceps_L' },
+    { name: 'Side_Abs_L' },
+    { name: 'Side_Abs_R' },
     { name: 'Abdominals' },
-    { name: 'Quadriceps' },
-    { name: 'Upper Back' },
-    { name: 'Middle Back' },
-    { name: 'Lower Back' },
-    { name: 'Triceps' },
-    { name: 'Gluteus Maximus' },
-    { name: 'Hamstring Group' },
-    { name: 'Calf' },
+    { name: 'Quadriceps_L' },
+    { name: 'Quadriceps_R' },
+    { name: 'Upper_Back' },
+    { name: 'Middle_Back' },
+    { name: 'Lower_Back' },
+    { name: 'Triceps_L' },
+    { name: 'Triceps_R' },
+    { name: 'Gluteus_Maximus' },
+    { name: 'Hamstring_L' },
+    { name: 'Hamstring_R' },
+    { name: 'Calf_L' },
+    { name: 'Calf_R' },
   ]);
 
   function findId(muscleName) {
@@ -36,51 +43,61 @@ async function seedDataBase() {
       name: 'Bench Press',
       musclesAffected: [
         findId('Chest'),
-        findId('Triceps'),
-        findId('Deltoid')
+        findId('Triceps_L'),
+        findId('Triceps_R'),
+        findId('Deltoid_L'),
+        findId('Deltoid_R'),
       ]
     },
     {
       name: 'Bicep Curl',
       musclesAffected: [
-        findId('Biceps')
+        findId('Biceps_L'),
+        findId('Biceps_R')
       ]
     },
     {
       name: 'Pull-Up',
       musclesAffected: [
-        findId('Upper Back'),
-        findId('Middle Back'),
-        findId('Biceps')
+        findId('Upper_Back'),
+        findId('Middle_Back'),
+        findId('Biceps_L'),
+        findId('Biceps_R')
       ]
     },
     {
       name: 'Deadlift',
       musclesAffected: [
-        findId('Lower Back'),
-        findId('Gluteus Maximus'),
-        findId('Hamstring Group')
+        findId('Lower_Back'),
+        findId('Gluteus_Maximus'),
+        findId('Hamstring_L'),
+        findId('Hamstring_R')
       ]
     },
     {
       name: 'Squat',
       musclesAffected: [
-        findId('Quadriceps'),
-        findId('Gluteus Maximus'),
-        findId('Hamstring Group')
+        findId('Quadriceps_L'),
+        findId('Quadriceps_R'),
+        findId('Gluteus_Maximus'),
+        findId('Hamstring_L'),
+        findId('Hamstring_R')
       ]
     },
     {
       name: 'Calf Raise',
       musclesAffected: [
-        findId('Calf')
+        findId('Calf_L'),
+        findId('Calf_R')
       ]
     },
     {
       name: 'Shoulder Press',
       musclesAffected: [
-        findId('Deltoid'),
-        findId('Triceps')
+        findId('Deltoid_L'),
+        findId('Deltoid_R'),
+        findId('Triceps_L'),
+        findId('Triceps_R')
       ]
     },
     {
@@ -92,33 +109,36 @@ async function seedDataBase() {
     {
       name: 'Triceps Extensions',
       musclesAffected: [
-        findId('Triceps')
+        findId('Triceps_L'),
+        findId('Triceps_R')
       ]
     },
     {
       name: 'Seated Cable Row',
       musclesAffected: [
-        findId('Middle Back'),
-        findId('Upper Back'),
-        findId('Biceps')
+        findId('Middle_Back'),
+        findId('Upper_Back'),
+        findId('Biceps_L'),
+        findId('Biceps_R')
       ]
     },
     {
       name: 'Hip Thrust',
       musclesAffected: [
-        findId('Gluteus Maximus')
+        findId('Gluteus_Maximus')
       ]
     },
     {
       name: 'Side Bends',
       musclesAffected: [
-        findId('Side abs')
+        findId('Side_Abs_L'),
+        findId('Side_Abs_R')
       ]
     },
     {
       name: 'Back Extension',
       musclesAffected: [
-        findId('Lower Back')
+        findId('Lower_Back')
       ]
     },
     {

@@ -1,0 +1,117 @@
+/* App.css — Modern health-app layout */
+
+:root {
+  --bg: #f6f8fb;
+  --card: rgba(255, 255, 255, 0.78);
+  --border: rgba(148, 163, 184, 0.35);
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --radius: 18px;
+  --shadow: 0 12px 34px rgba(15, 23, 42, 0.08), 0 1px 0 rgba(15, 23, 42, 0.04);
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(1200px 700px at 20% 0%, #eef2ff 0%, transparent 55%),
+              radial-gradient(1200px 700px at 80% 10%, #ecfeff 0%, transparent 55%),
+              var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+.main-body-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 16px 28px;
+
+  display: grid;
+  grid-template-columns: 280px 1fr 340px;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header header"
+    "legend anatomy workouts";
+  gap: 16px;
+  align-items: start;
+}
+
+/* Header */
+.header-container {
+  grid-area: header;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+}
+
+.header-title::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #22c55e, #60a5fa);
+  vertical-align: middle;
+}
+
+/* Panels */
+.legend-container,
+.anatomy-container,
+.workout-list-container {
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+/* Assign grid areas */
+.legend-container {
+  grid-area: legend;
+  padding: 14px;
+}
+
+.anatomy-container {
+  grid-area: anatomy;
+  padding: 14px;
+}
+
+.workout-list-container {
+  grid-area: workouts;
+  padding: 14px;
+}
+
+/* Loading text */
+.anatomy-container h2 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* Responsive: stack into one column on smaller screens */
+@media (max-width: 1100px) {
+  .main-body-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "legend"
+      "anatomy"
+      "workouts";
+  }
+}
