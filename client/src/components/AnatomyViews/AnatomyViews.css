@@ -1,51 +1,29 @@
-/* AnatomyViews.css
-   Modern, clean "health app" styling for the center panel.
-   Works well inside a larger 3-column layout.
-*/
-
 .anatomy-views-section {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* front left, back right */
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   align-items: start;
 }
 
-/* Each anatomy view gets a "card" feel */
 .anatomy-view {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(148, 163, 184, 0.35); /* slate-ish */
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 14px;
-  box-shadow:
-    0 10px 30px rgba(15, 23, 42, 0.08),
-    0 1px 0 rgba(15, 23, 42, 0.04);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
 }
 
-/* SVG presentation */
 .anatomy-svg {
   width: 100%;
   height: auto;
   display: block;
-
-  /* Helps with crisp rendering on some screens */
   shape-rendering: geometricPrecision;
 }
 
-/* Optional: make the muscle fills feel smooth when updated */
+/* Smooth transitions when colors update */
 .anatomy-svg path {
   transition: fill 200ms ease;
 }
 
-/* Optional: gentle hover affordance for the whole card */
-.anatomy-view:hover {
-  border-color: rgba(99, 102, 241, 0.35); /* indigo hint */
-  box-shadow:
-    0 14px 40px rgba(15, 23, 42, 0.10),
-    0 1px 0 rgba(15, 23, 42, 0.04);
-}
-
-/* Responsive: on smaller screens, stack front/back vertically */
 @media (max-width: 900px) {
   .anatomy-views-section {
     grid-template-columns: 1fr;
