@@ -47,11 +47,11 @@
 }
 
 /* Match anatomy colors */
-.swatch-red    { background: #ff3b30; }
-.swatch-orange { background: #ff9500; }
-.swatch-yellow { background: #f5e400; }
-.swatch-green  { background: #64e72f; }
-.swatch-blue   { background: #2a89d6; }
+.swatch-red    { background: #E85D4A; }
+.swatch-orange { background: #F28C38; }
+.swatch-yellow { background: #EAC54F; }
+.swatch-green  { background: #5FBF8F; }
+.swatch-blue   { background: #4A7FA7; }
 
 .legend-text {
   display: flex;

@@ -5,16 +5,16 @@ import FrontBody from "../../assets/musclehue_front_male.svg?react";
 import BackBody from "../../assets/musclehue_back_male.svg?react";
 
 function chooseColor(workoutDate) {
-  if (!workoutDate) return "#2a89d6";
+  if (!workoutDate) return "#4A7FA7";
 
   const days =
     (Date.now() - new Date(workoutDate).getTime()) / (1000 * 60 * 60 * 24);
 
-  if (days < 1) return "#ff3b30";
-  if (days < 2) return "#ff9500";
-  if (days < 3) return "#f5e400";
-  if (days < 7) return "#64e72f";
-  return "#2a89d6";
+  if (days < 1) return "#E85D4A";
+  if (days < 2) return "#F28C38";
+  if (days < 3) return "#EAC54F";
+  if (days < 7) return "#5FBF8F";
+  return "#4A7FA7";
 }
 
 function colorBody(svgRoot, muscles) {
