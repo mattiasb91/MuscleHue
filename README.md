@@ -112,11 +112,6 @@ npm run dev
 - [ ] **User profiles:** Enable account creation and login to save personal data.
 - [ ] **Gender-based anatomical model:** Change the anatomical model based on the user’s selected gender.
 
-## Known Issues / Limitations
-
-- **Demo configuration:** The AI prompt is currently set to generate **one activity per day** for **one week** only.
-- **Single goal per user:** Each user can only have **one active goal** at the moment (multiple goals are not supported yet).
-
 ## Project Context
 
 Built as a solo project in the Codeworks Fullstack bootcamp.
