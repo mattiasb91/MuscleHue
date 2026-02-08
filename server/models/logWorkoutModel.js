@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ObjectId = mongoose.Schema.Types.ObjectId;  // put this variable here to make the schema itself easier to read
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const loggedWorkoutSchema = new mongoose.Schema({
   workout: {

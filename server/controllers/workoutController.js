@@ -11,34 +11,29 @@ async function getAllWorkouts(req, res) {
   }
   catch (err) {
     console.error(err);
-    return res.status(500).json({ message: "Failed to fetch the workouts!!" });
+    return res.status(500).json({ message: "Failed to fetch the workouts" });
   }
 };
 
-// this is the most complicated controller. it should both add a loggedworkout to the logworkout collection,
-// and update affected muscles workoutDate:
 
 async function logWorkout(req, res) {
 
   try {
-    //first. add a loggedWorkout to the logworkout-model:
-    // - get logout id, check if it exists. never trust the client! --some guy
+    // add a loggedWorkout to the logworkout-model:
     const { workoutId } = req.body;
     if (!workoutId) {
-      return res.status(400).json({ message: "workoutId is required, you silly goose!!!" });
+      return res.status(400).json({ message: "workoutId is required" });
     };
 
     const workout = await Workout.findById(workoutId);
     if (!workout) {
-      return res.status(404).json({ message: "workout not found, dangit" });
+      return res.status(404).json({ message: "workout not found" });
     };
 
-    // - create new loggedworkout document using id, time gets default. (.create)
+    // create new loggedworkout document using id, time gets default.
     const log = await LoggedWorkout.create({ workout: workoutId });
 
-    //second. update all affected muscles timer
-    // get muscle-id:s and update. (.updateMany)
-
+    // update all affected muscles timer
     await Muscle.updateMany(
       { _id: { $in: workout.musclesAffected } },
       { workoutDate: log.performedAt }

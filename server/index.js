@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 const cors = require("cors");
-const { connectDB, Muscle } = require('./models') // imports the connectDB from the index.js in he models folder
+const { connectDB, Muscle } = require('./models') // imports the connectDB from the index.js in the models folder
 const router = require("./router");
 const seedDataBase = require('./seed');
 const port = 3000;
@@ -30,7 +30,7 @@ async function startServer() {
     app.use(router);
 
     app.listen(port, () => {
-      console.log(`server up and runnin' on http://localhost:${port}`);
+      console.log(`server up and running on http://localhost:${port}`);
     })
 
   } catch (err) {

@@ -21,7 +21,7 @@ function colorBody(svgRoot, muscles) {
   if (!svgRoot) return;
 
   for (const m of muscles) {
-    const id = m.name; // must match the SVG path id exactly (case-sensitive), i had to rename all muscles in backend for this
+    const id = m.name; // must match the SVG path id exactly (case-sensitive)
     const el = svgRoot.querySelector(`#${CSS.escape(id)}`);
     if (!el) continue;
 
@@ -38,14 +38,14 @@ export default function AnatomyViews({ muscles = [] }) {
     colorBody(backRef.current, muscles);
   }, [muscles]);
 
-  return(
-    <section className='anatomy-views-section'>
-      <div className='anatomy-view'>
+  return (
+    <section className="anatomy-views-section">
+      <div className="anatomy-view">
         <FrontBody ref={frontRef} className="anatomy-svg" />
-        </div>
-      <div className='anatomy-view'>
+      </div>
+      <div className="anatomy-view">
         <BackBody ref={backRef} className="anatomy-svg" />
-        </div>
+      </div>
     </section>
   );
 }
