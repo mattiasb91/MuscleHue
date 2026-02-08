@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#demo--screenshots">Demo / Screenshots</a> ·
+  <a href="#demo--screenshot">Demo / Screenshot</a> ·
   <a href="#features">Features</a> ·
   <a href="#tech-stack">Tech Stack</a> ·
   <a href="#getting-started">Getting Started</a>
