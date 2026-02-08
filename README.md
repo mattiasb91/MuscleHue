@@ -119,7 +119,7 @@ npm run dev
 
 ## Project Context
 
-Built as a solo project in the Codeworks FUllstack bootcamp.
+Built as a solo project in the Codeworks Fullstack bootcamp.
 
 ## License
 
